@@ -1,25 +1,29 @@
-#File Backup Logger
+# File Backup Logger
 
 ## Description
-A program that backs up files and directories with versioning, logs the operations locally, and includes a GUI. Alternatively, the program can be written in C++ if you're more comfortable working with it.
+This program is a GUI that backs up files and directories with versioning and logs the operations locally with their status.
 
-## Getting Started
-1. Clone this repository or download the files.
-2. Install required packages if necessary.
-3. Run the `main.py` or `main.cpp` file to get started.
+## Functionalities Implemented
+- User can either back up the file/folder zipped or plain, depending on what they select in the user interface.
+- *If a file/folder already exists in the backup location, user is asked if they'd like to overwrite it or create a copy of it, appending the copy number to the name 
+- User can select more than one file and/or folder each time for backing up, and can enter the destination path either manually or through the file dialog
+- History log showing the backed up files/folders, the time of backup, source & destination, as well as the status of the backup.
+- A status label that updates the user on the status of the operation (Not Started Yet, Backing up, Done)
+- Popup notifications that guide the user when using the application (e.g. "Please Select the Backup Source First", "Please Select the Backup Destination First", "The entered destination path does not exist!", "Backup Successful", ...)
+- Error handling: the application includes try-except blocks to handle potential errors during file operations and displays user-friendly error messages when something goes wrong.
 
-Keep in mind that the code must be written in OOP.
+## Instructions
+- Upon running the application, the user interface is shown in ApplicationScreenshots/GUI.png
+- First, select the file(s) and/or folder(s) you want to organize, by clicking on the "Select File(s)" and "Select Folder(s)" buttons.
+- Then, select one of the two modes of backup, Plain or Zipped.
+- If you would like to reset the selected data, press the "Reset" button.
+- Lastly, press the "Start" button to start backing up the selected files/folders.
+- To see the backed up files/folders history, click on the "History Log" button at the top right corner. There you can see the source path, destination path, the time the backup was made, and the status of the operation. It is shown in ApplicationScreenshots/HistoryLog.png
 
-## Tasks
-- Research how to copy folders in Python using `shutil`. Create initial project folder and file structure.
-- Implement basic folder selection (manually or via `input()`). Write code to copy folder contents to a backup location.
-- Add timestamp and version of the program is backuping an software directory to backup folder names (e.g., backup_2025-05-01_v227-3-3).
-- Add error handling (e.g., non-existent folder, permission denied). Start writing a simple .log file (backup time, status).
-- Clean up code. Create `backup.py` and move reusable functions there. Test with multiple folders and large files.
-- Add ZIP compression to backups using `zipfile`. Let user choose between zipped or plain copy.
-- Improve the log format. Add file count and backup duration.
-- Add tkinter GUI to select source/destination folders and trigger backup.
-- Add config file (e.g., .json) to store user preferences (folders, backup interval).
-- Final testing. Create README with instructions and screenshots. Submit as Git repo.
+- See ApplicationScreenshots/PlainFilesAndFoldersSelection.png, ApplicationScreenshots/backup_2025-06-27_v3.12.6(1)
+- See ApplicationScreenshots/ZippedFilesAndFoldersSelection.png, ApplicationScreenshots/backup_2025-06-27_v3.12.6(2)
+- *See ApplicationScreenshots/OverwriteMessage.png, ApplicationScreenshots/backup_2025-06-27_v3.12.6(3)
 
-## Estimated time to work 2 weeks
+## Unimplemented
+- Add file count and backup duration: due to time constraint.
+- Add config file (e.g., .json) to store user preferences (folders, backup interval): did not understand
